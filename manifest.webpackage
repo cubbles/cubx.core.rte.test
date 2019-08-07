@@ -1,0 +1,108 @@
+{
+  "name": "crc-loader-test",
+  "groupId": "cubx.core.test",
+  "version": "0.2.0-SNAPSHOT",
+  "modelVersion": "9.1.1",
+  "docType": "webpackage",
+  "author": {
+    "name": "Hd Böhlau",
+    "email": "hans-dieter.boehlau@incowia.com"
+  },
+  "license": "MIT",
+  "keywords": [ ],
+  "man": [ ],
+  "runnables": [
+    {
+      "name": "doc",
+      "path": "/doc/readme.html"
+    }
+  ],
+  "artifacts": {
+    "apps": [
+      {
+        "artifactId": "app",
+        "description": "This app demonstrates ...",
+        "runnables": [
+          {
+            "name": "entry point",
+            "path": "/index.html"
+
+          }
+        ]
+      }
+    ],
+    "utilities": [
+      {
+        "artifactId": "util1",
+        "description": "This util demonstrates ...",
+        "resources": [
+          "js/util1.js"
+        ],
+        "dependencies": [
+          {
+            "artifactId": "util2",
+            "webpackageId": "cubx.core.test.crc-loader-test"
+          },
+          {
+            "artifactId": "util3",
+            "webpackageId": "cubx.core.test.crc-loader-test"
+          }
+        ]
+      },
+      {
+        "artifactId": "util2",
+        "description": "This util demonstrates ...",
+        "resources": [
+          "js/util2.js"
+        ],
+        "dependencies": [
+          {
+            "artifactId": "util3"
+          }
+        ]
+
+      },
+      {
+        "artifactId": "util3",
+        "description": "This util demonstrates ...",
+        "resources": [
+          "js/util3.js"
+        ]
+      }
+    ],
+    "elementaryComponents": [
+      {
+        "artifactId": "elementary-example",
+        "description": "This is an elementary-component based on Polymer.",
+        "runnables": [
+          {
+            "name": "demo",
+            "path": "/demo/index.html",
+            "description": "Demo app..."
+          }
+        ],
+
+        "resources": [
+          "elementary-example.html"
+        ],
+        "dependencies": [
+          {
+            "artifactId": "cubxcomponent",
+            "webpackageId": "cubx.core.rte@3.0.0-SNAPSHOT"
+          }
+        ],
+        "slots": [
+          {
+            "slotId": "a",
+            "type": "number",
+            "direction": [
+              "input",
+              "output"
+            ],
+            "value": 10
+          }
+        ]
+      }
+    ]
+  }
+}
