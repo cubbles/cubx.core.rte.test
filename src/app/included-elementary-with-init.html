@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="style/app.css">
 
-    <script src="../../cubx.core.rte@4.0.0-SNAPSHOT/webcomponents/webcomponents.bundle.js"></script>
     <script>
         window.cubx = {
             "CRCInit": {
@@ -26,7 +25,7 @@
     <!--
     data-CRCInit.loadCIF=<"true"|"false">
     -->
-    <script src="../../cubx.core.rte@4.0.0-SNAPSHOT/crc-loader/crc-loader.bundle.js"></script>
+    <script src="../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
 
 </head>
 <body>
@@ -51,6 +50,9 @@ included-elementary-with-init |
         <cubx-core-connections>
             <cubx-core-connection connection-id="con-1" source="a" destination="two:a"></cubx-core-connection>
         </cubx-core-connections>
+        <cubx-core-init style="display:none">
+            <cubx-core-slot-init slot="a">20</cubx-core-slot-init>
+        </cubx-core-init>
     </rte-test-elementary-example>
     <rte-test-elementary-example id="two"></rte-test-elementary-example>
 </div>
