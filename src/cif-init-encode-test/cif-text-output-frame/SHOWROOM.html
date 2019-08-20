@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;<%= elementName %>&gt; demo</title>
+
+    <script src="../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
+
+</head>
+<body>
+<!--  Place cubbles components there. -->
+<<%= elementName %> cubx-webpackage-id="this">
+    <cubx-core-init style="display: none">
+        <cubx-core-slot-init slot="text">"<a href=\"http://cubbles.github.io\" target=\"_blank\">cubbles.github.io</a>"</cubx-core-slot-init>
+    </cubx-core-init>
+</<%= elementName %>>
+<hr>
+<<%= elementName %> cubx-webpackage-id="this"></<%= elementName %>>
+
+</body>
+</html>
