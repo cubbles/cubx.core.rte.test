@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= webpackageName %>-cif-copy-value-test-compound</title>
+    <script>
+        window.cubx = {
+            "CRCInit": {
+                "rootDependencies": [
+                    {
+ 						artifactId: '<%= webpackageName %>-cif-copy-value-test-compound'
+					}
+                ]
+            }
+        }
+    </script>
+    
+
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="../style/main-style.css">
+
+    <!-- include crc-loader webresource from base
+        1) Want to add a main script?
+        Add the following attribute: data-crc-main="js/main.js"
+    -->
+
+    <script src="../../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
+
+
+</head>
+<body>
+
+<h2>Demo page for the compound component <code><%= webpackageName %>-cif-copy-value-test-compound</code></h2>
+<ul>
+    <li>contains 2 elementary components: <%= webpackageName %>-cif-copy-value-test-a and <%= webpackageName %>-cif-copy-value-test-b</li>
+    <li>all output slots (a,b,c,d) from <%= webpackageName %>-cif-copy-value-test-a is connected to the input slots (a,b,c,d) of <%= webpackageName %>-cif-copy-value-test-b</li>
+    <li>all input slots from this compound component (aa, bb, cc, dd) is connected to the input slots (a,b,c,d) of <%= webpackageName %>-cif-copy-value-test-a</li>
+    <li>all output slots (a,b,c,d) of <%= webpackageName %>-cif-copy-value-test-a is connected to the output slots if  this compound component (aa, bb, cc, dd)</li>
+</ul>
+<p>For the following connections is the "copyValue" attribute false
+<ul>
+    <li><%= webpackageName %>-cif-copy-value-test-obj-a/c -> <%= webpackageName %>-cif-copy-value-test-obj-b/c</li>
+    <li><%= webpackageName %>-cif-copy-value-test-obj-a/c -> <%= webpackageName %>-cif-copy-value-test-compound-obj/cc</li>
+    <li><%= webpackageName %>-cif-copy-value-test-compound-obj/cc -> <%= webpackageName %>-cif-copy-value-test-obj-a/c</li>
+</ul>
+for the following connections is the "copyValue" attribute explicitly true
+<ul>
+    <li><%= webpackageName %>-cif-copy-value-test-obj-a/b -> <%= webpackageName %>-cif-copy-value-test-obj-b/b</li>
+    <li><%= webpackageName %>-cif-copy-value-test-obj-a/b -> <%= webpackageName %>-cif-copy-value-test-compound-obj/bb</li>
+    <li><%= webpackageName %>-cif-copy-value-test-compound-obj/bb -> <%= webpackageName %>-cif-copy-value-test-obj-a/b</li>
+</ul>
+for all other connections is the "copyValue" attribute implicitly true (copyValue attribute missed)
+
+</p>
+<hr>
+<!-- The cubixx client-runtime-container is bound to the next div -->
+<div cubx-core-crc>
+    <!-- Change this to your element name ... -->
+    <<%= webpackageName %>-cif-copy-value-test-compound></<%= webpackageName %>-cif-copy-value-test-compound>
+</div>
+
+</body>
+</html>
