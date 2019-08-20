@@ -14,5 +14,8 @@ module.exports = {
     'postcss-preset-env': {},
     autoprefixer: {},
     cssnano: {}
-  }
+  },
+  use: [
+    'postcss-custom-properties'
+  ]
 };
