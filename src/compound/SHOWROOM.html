@@ -1,0 +1,38 @@
+<!--
+    This is your showcase.
+    Just use it to
+    * demonstrate elements of your webpackage,
+    * evaluate the integration with elements of other webpackages,
+    * test the integration with the dom-api.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= elementName %></title>
+    <script>
+    window.cubx = {
+        CRCInit: {
+            runtimeMode: 'dev'
+        }
+    }
+    </script>
+    <script src="../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1><%= elementName %></h1>
+        </div>
+        <hr>
+        <div>
+            <h2>With default slot values</h2>
+            <<%= elementName %> cubx-webpackage-id="this"></<%= elementName %>>
+        </div>
+    </div>
+
+</body>
+
+</html>
