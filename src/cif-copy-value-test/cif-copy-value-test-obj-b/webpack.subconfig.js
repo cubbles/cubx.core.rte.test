@@ -41,7 +41,7 @@ const config = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: `${webpackageName}_[local]`
+                localIdentName: `${elementName}_[local]`
               },
               importLoaders: 1
             }

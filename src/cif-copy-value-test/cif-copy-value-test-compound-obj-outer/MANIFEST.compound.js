@@ -3,7 +3,6 @@ const assert = require('assert');
 module.exports = webpackageName => {
   assert.ok(webpackageName, 'Expected "webpackageName" to be defined.');
   return {
-    resources: [],
     slots: [
       {
         slotId: 'outer',
@@ -20,6 +19,10 @@ module.exports = webpackageName => {
         artifactId: `${webpackageName}-cif-copy-value-test-obj-a`
       },
       {
+        memberId: 'member-compound',
+        artifactId: `${webpackageName}-cif-copy-value-test-compound-obj`
+      },
+      {
         memberId: 'member-b',
         artifactId: `${webpackageName}-cif-copy-value-test-obj-b`
       }
@@ -28,8 +31,8 @@ module.exports = webpackageName => {
       {
         connectionId: 'con1',
         source: {
-          memberIdRef: 'member-a',
-          slot: 'a'
+          memberIdRef: 'member-compound',
+          slot: 'aa'
         },
         destination: {
           memberIdRef: 'member-b',
@@ -39,32 +42,30 @@ module.exports = webpackageName => {
       {
         connectionId: 'con2',
         source: {
-          memberIdRef: 'member-a',
-          slot: 'b'
+          memberIdRef: 'member-compound',
+          slot: 'bb'
         },
         destination: {
           memberIdRef: 'member-b',
           slot: 'b'
-        },
-        copyValue: true
+        }
       },
       {
         connectionId: 'con3',
         source: {
-          memberIdRef: 'member-a',
-          slot: 'c'
+          memberIdRef: 'member-compound',
+          slot: 'cc'
         },
         destination: {
           memberIdRef: 'member-b',
           slot: 'c'
-        },
-        copyValue: false
+        }
       },
       {
         connectionId: 'con4',
         source: {
-          memberIdRef: 'member-a',
-          slot: 'd'
+          memberIdRef: 'member-compound',
+          slot: 'dd'
         },
         destination: {
           memberIdRef: 'member-b',
@@ -78,6 +79,7 @@ module.exports = webpackageName => {
           slot: 'a'
         },
         destination: {
+          memberIdRef: 'member-compound',
           slot: 'aa'
         }
       },
@@ -88,9 +90,9 @@ module.exports = webpackageName => {
           slot: 'b'
         },
         destination: {
+          memberIdRef: 'member-compound',
           slot: 'bb'
-        },
-        copyValue: true
+        }
       },
       {
         connectionId: 'con7',
@@ -99,9 +101,9 @@ module.exports = webpackageName => {
           slot: 'c'
         },
         destination: {
+          memberIdRef: 'member-compound',
           slot: 'cc'
-        },
-        copyValue: false
+        }
       },
       {
         connectionId: 'con8',
@@ -110,79 +112,17 @@ module.exports = webpackageName => {
           slot: 'd'
         },
         destination: {
+          memberIdRef: 'member-compound',
           slot: 'dd'
-        }
-      },
-      {
-        connectionId: 'con9',
-        source: {
-          slot: 'aa'
-        },
-        destination: {
-          memberIdRef: 'member-a',
-          slot: 'a'
-        }
-      },
-      {
-        connectionId: 'con10',
-        source: {
-          slot: 'bb'
-        },
-        destination: {
-          memberIdRef: 'member-a',
-          slot: 'b'
-        },
-        copyValue: true
-      },
-      {
-        connectionId: 'con11',
-        source: {
-          slot: 'cc'
-        },
-        destination: {
-          memberIdRef: 'member-a',
-          slot: 'c'
-        },
-        copyValue: false
-      },
-      {
-        connectionId: 'con12',
-        source: {
-          slot: 'dd'
-        },
-        destination: {
-          memberIdRef: 'member-a',
-          slot: 'd'
         }
       }
     ],
     inits: [
       {
-        slot: 'aa',
+        slot: 'outer',
         value: {
-          label: 'slot aa',
-          value: 111
-        }
-      },
-      {
-        slot: 'bb',
-        value: {
-          label: 'slot cc',
-          value: 222
-        }
-      },
-      {
-        slot: 'cc',
-        value: {
-          label: 'slot cc',
-          value: '--- c ---'
-        }
-      },
-      {
-        slot: 'dd',
-        value: {
-          label: 'slot dd',
-          value: '--- d ---'
+          label: 'slot outer',
+          value: 'bbb'
         }
       },
       {
@@ -190,7 +130,7 @@ module.exports = webpackageName => {
         slot: 'a',
         value: {
           label: 'slot a',
-          value: 9
+          value: 100
         }
       },
       {
@@ -198,7 +138,7 @@ module.exports = webpackageName => {
         slot: 'b',
         value: {
           label: 'slot b',
-          value: 8
+          value: 200
         }
       },
       {
@@ -206,7 +146,7 @@ module.exports = webpackageName => {
         slot: 'c',
         value: {
           label: 'slot c',
-          value: 'a-c'
+          value: '### c ####'
         }
       },
       {
@@ -214,7 +154,39 @@ module.exports = webpackageName => {
         slot: 'd',
         value: {
           label: 'slot d',
-          value: 'a-d'
+          value: '### d ###'
+        }
+      },
+      {
+        memberIdRef: 'member-compound',
+        slot: 'aa',
+        value: {
+          label: 'slot aa',
+          value: 999
+        }
+      },
+      {
+        memberIdRef: 'member-compound',
+        slot: 'bb',
+        value: {
+          label: 'slot bb',
+          value: 888
+        }
+      },
+      {
+        memberIdRef: 'member-compound',
+        slot: 'cc',
+        value: {
+          label: 'slot cc',
+          value: ';)'
+        }
+      },
+      {
+        memberIdRef: 'member-compound',
+        slot: 'dd',
+        value: {
+          label: 'slot dd',
+          value: '=:)'
         }
       },
       {
@@ -222,7 +194,7 @@ module.exports = webpackageName => {
         slot: 'a',
         value: {
           label: 'slot a',
-          value: 5
+          value: 101
         }
       },
       {
@@ -230,15 +202,15 @@ module.exports = webpackageName => {
         slot: 'b',
         value: {
           label: 'slot b',
-          value: 6
+          value: 202
         }
       },
       {
         memberIdRef: 'member-b',
         slot: 'c',
         value: {
-          label: 'slot a',
-          value: 'b-c'
+          label: 'slot c',
+          value: 'xxx c xxx'
         }
       },
       {
@@ -246,11 +218,15 @@ module.exports = webpackageName => {
         slot: 'd',
         value: {
           label: 'slot d',
-          value: 'b-d'
+          value: 'xxx d xxx'
         }
       }
     ],
+    resources: [],
     dependencies: [
+      {
+        artifactId: `${webpackageName}-cif-copy-value-test-compound-obj`
+      },
       {
         artifactId: `${webpackageName}-cif-copy-value-test-obj-a`
       },

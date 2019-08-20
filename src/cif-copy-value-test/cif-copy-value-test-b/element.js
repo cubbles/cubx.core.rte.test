@@ -9,6 +9,12 @@ import template from './element.html';
     ready: function () {
       console.log('Cubbles ready:', this);
     },
+    contextReady: function () {
+      this.$$('#slot-a').innerText = this.getA();
+      this.$$('#slot-b').innerText = this.getB();
+      this.$$('#slot-c').innerText = this.getC();
+      this.$$('#slot-d').innerText = this.getD();
+    },
     modelAChanged: function (newValue) {
       this.$$('#slot-a').innerText = newValue;
     },

@@ -11,6 +11,16 @@ import template from './element.html';
       this.$.slotb.setAttribute('value', this.getB().value);
       this.$.slotc.setAttribute('value', this.getC().value);
       this.$.slotd.setAttribute('value', this.getD().value);
+
+      this.$$('[for="slota"]').innerText = this.getA().label;
+      this.$$('[for="slotb"]').innerText = this.getB().label;
+      this.$$('[for="slotc"]').innerText = this.getC().label;
+      this.$$('[for="slotd"]').innerText = this.getD().label;
+
+      this.$.slota.addEventListener('change', this.changeAHandler.bind(this));
+      this.$.slotb.addEventListener('change', this.changeBHandler.bind(this));
+      this.$.slotc.addEventListener('change', this.changeCHandler.bind(this));
+      this.$.slotd.addEventListener('change', this.changeDHandler.bind(this));
     },
     changeAHandler: function (event) {
       var a = {
@@ -42,15 +52,19 @@ import template from './element.html';
     },
     modelAChanged: function () {
       this.$.slota.setAttribute('value', this.getA().value);
+      this.$$('[for="slota"]').innerText = this.getA().label;
     },
     modelBChanged: function () {
       this.$.slotb.setAttribute('value', this.getB().value);
+      this.$$('[for="slotb"]').innerText = this.getB().label;
     },
     modelCChanged: function () {
       this.$.slotc.setAttribute('value', this.getC().value);
+      this.$$('[for="slotc"]').innerText = this.getC().label;
     },
     modelDChanged: function () {
       this.$.slotd.setAttribute('value', this.getD().value);
+      this.$$('[for="slotd"]').innerText = this.getD().label;
     }
   });
 }());
