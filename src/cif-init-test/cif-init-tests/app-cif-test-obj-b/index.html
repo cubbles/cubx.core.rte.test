@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>rte-test-cif-test-obj-b</title>
+    <title><%= webpackageName %>-cif-test-obj-b</title>
     <script>
         window.cubx = {
             CRCInit: {
                 rootDependencies: [
                     {
- 						artifactId: 'rte-test-cif-test-obj-b'
+ 						artifactId: '<%= webpackageName %>-cif-test-obj-b'
 					}
                 ]
             }
@@ -25,10 +25,10 @@
 
 </head>
 <body>
-<h2>Demopage for the Cubixx-Component <code>rte-test-cif-test-obj-b</code></h2>
+<h2>Demopage for the Cubixx-Component <code><%= webpackageName %>-cif-test-obj-b</code></h2>
 <hr>
 <div>
-    <rte-test-cif-test-obj-b></rte-test-cif-test-obj-b>
+    <<%= webpackageName %>-cif-test-obj-b></<%= webpackageName %>-cif-test-obj-b>
 </div>
 
 </body>
