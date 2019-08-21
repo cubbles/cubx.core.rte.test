@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= webpackageName %>-repeated-value-false-compound-d</title>
+    <script>
+        window.cubx = {
+            CRCInit: {
+                rootDependencies: [
+                    {
+                        artifactId: '<%= webpackageName %>-repeated-value-false-compound-d'
+                    },
+                    {
+                        webpackageId: 'bootstrap-3.3.5@1.1.0',
+                        artifactId: 'bootstrap-bootstrap-theme'
+                    }
+                ]
+            }
+        }
+    </script>
+    
+
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="../style/main-style.css">
+    <script>
+        console.time('crcReady');
+        console.time('cifReady');
+        console.time('cifStart');
+        console.time('cifInitStart');
+        console.time('cifInitReady');
+        console.time('elementartiesReady');
+
+
+    </script>
+
+    <!-- include crc-loader webresource from base
+        1) Want to add a main script?
+        Add the following attribute: data-crc-main="js/main.js"
+    -->
+
+    <script src="../../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
+
+
+
+</head>
+<body>
+<h2>Testpage for the Cubixx-Component <code><%= webpackageName %>-repeated-value-false-compound-d</code></h2>
+
+<hr>
+<!-- The cubixx client-runtime-container is bound to the next div -->
+<div cubx-core-crc>
+    <!-- Change this to your element name ... -->
+    <<%= webpackageName %>-repeated-value-false-compound-d></<%= webpackageName %>-repeated-value-false-compound-d>
+</div>
+
+<script>
+    document.addEventListener('cifStart', function(){
+        console.timeEnd('cifStart');
+
+    });
+    document.querySelector('[cubx-core-crc]').addEventListener('crcReady',function(){
+      console.timeEnd('crcReady');
+    });
+    document.querySelector('[cubx-core-crc]').addEventListener('cifReady',function(){
+        console.timeEnd('cifReady');
+    });
+    document.querySelector('[cubx-core-crc]').addEventListener('cifInitStart',function(){
+        console.timeEnd('cifInitStart');
+    });
+    document.querySelector('[cubx-core-crc]').addEventListener('cifInitReady',function(){
+        console.timeEnd('cifInitReady');
+    });
+    document.querySelector('[cubx-core-crc]').addEventListener('cifElementariesReady',function(evt){
+        console.timeEnd('elementartiesReady');
+    });
+</script>
+</body>
+</html>

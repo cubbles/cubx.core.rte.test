@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= webpackageName %>-repeated-value-elementary-e</title>
+    <script>
+        window.cubx = {
+            CRCInit: {
+                rootDependencies: [
+                    {
+                        artifactId: '<%= webpackageName %>-repeated-value-elementary-e'
+                    },
+                    {
+                        webpackageId: 'bootstrap-3.3.5@1.1.0',
+                        artifactId: 'bootstrap-bootstrap-theme'
+                    }
+                ]
+            }
+        }
+    </script>
+    
+
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="../style/main-style.css">
+
+
+    <!-- include crc-loader webresource from base
+        1) Want to add a main script?
+        Add the following attribute: data-crc-main="js/main.js"
+    -->
+
+    <script src="../../../cubx.core.rte@4.0.0-SNAPSHOT/rte-core/main.bundle.js"></script>
+
+
+</head>
+<body>
+<h2>Testpage for the Cubixx-Component <code><%= webpackageName %>-repeated-value-elementary-e</code></h2>
+
+<hr>
+<!-- The cubixx client-runtime-container is bound to the next div -->
+<div cubx-core-crc>
+    <!-- Change this to your element name ... -->
+    <<%= webpackageName %>-repeated-value-elementary-e>
+        <div style="border: solid red thin">XXXX</div>
+    </<%= webpackageName %>-repeated-value-elementary-e>
+</div>
+
+
+</body>
+</html>
