@@ -5,13 +5,6 @@ module.exports = webpackageName => {
   return {
     resources: ['element.bundle.js'],
     description: 'cif-test-a connected with cif-test-b',
-    runnables: [
-      {
-        name: 'docs',
-        path: '/docs/index.html',
-        description: 'Dataflow of the component'
-      }
-    ],
     slots: [
       {
         slotId: 'aa',

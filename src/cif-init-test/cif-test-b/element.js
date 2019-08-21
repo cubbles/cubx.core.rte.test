@@ -8,6 +8,10 @@ import template from './element.html';
     template: template,
     ready: function () {
       console.log('polymer ready:', this);
+      this.$$('#slot-a').innerText = this.getA();
+      this.$$('#slot-b').innerText = this.getB();
+      this.$$('#slot-c').innerText = this.getC();
+      this.$$('#slot-d').innerText = this.getD();
     },
     modelAChanged: function (newValue) {
       this.$$('#slot-a').innerText = newValue;
