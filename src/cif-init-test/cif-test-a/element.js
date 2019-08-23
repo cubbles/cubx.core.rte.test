@@ -12,10 +12,10 @@ import template from './element.html';
       this.$.slotc.setAttribute('value', this.getC());
       this.$.slotd.setAttribute('value', this.getD());
 
-      this.$.slota.addEventListener('change', this.changeAHandler.bind(this));
-      this.$.slotb.addEventListener('change', this.changeBHandler.bind(this));
-      this.$.slotc.addEventListener('change', this.changeCHandler.bind(this));
-      this.$.slotd.addEventListener('change', this.changeDHandler.bind(this));
+      this.$.slota.addEventListener('input', this.changeAHandler.bind(this));
+      this.$.slotb.addEventListener('input', this.changeBHandler.bind(this));
+      this.$.slotc.addEventListener('input', this.changeCHandler.bind(this));
+      this.$.slotd.addEventListener('input', this.changeDHandler.bind(this));
     },
     changeAHandler: function (event) {
       this.setA(event.target.value);

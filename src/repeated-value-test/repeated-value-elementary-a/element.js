@@ -20,10 +20,10 @@ import template from './element.html';
         this.$.slotc.checked = false;
       }
       this.$.slotd.value = this.getD().value;
-      this.$.slota.addEventListener('change', this.inputFieldSlotAChanged.bind(this));
-      this.$.slotb.addEventListener('change', this.inputFieldSlotBChanged.bind(this));
-      this.$.slotc.addEventListener('change', this.inputFieldSlotCChanged.bind(this));
-      this.$.slotd.addEventListener('change', this.inputFieldSlotDChanged.bind(this));
+      this.$.slota.addEventListener('input', this.inputFieldSlotAChanged.bind(this));
+      this.$.slotb.addEventListener('input', this.inputFieldSlotBChanged.bind(this));
+      this.$.slotc.addEventListener('input', this.inputFieldSlotCChanged.bind(this));
+      this.$.slotd.addEventListener('input', this.inputFieldSlotDChanged.bind(this));
     },
 
     /**
