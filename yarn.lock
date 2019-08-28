@@ -697,9 +697,9 @@
     yargs "^3.15.0"
 
 "@cubbles/wpkg-utils@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@cubbles/wpkg-utils/-/wpkg-utils-0.2.2.tgz#4ce0196475910cdc4f4562d1c2eb6fc9e33286a6"
-  integrity sha512-hO5Dg56fA3pZZ/nZ0QXPZhu8EhdB7hJt2g587QEOddlL5ZW/2js5snduYlLy9ax69pynnsuKF2ig9vwduFUa7g==
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@cubbles/wpkg-utils/-/wpkg-utils-0.2.3.tgz#039e4f7298786657aac203a2d60fa031b0c001a5"
+  integrity sha512-ZkC2UzmHKIRTA4YF/QTahDFG/UXlP9Y9+BmR+aKtMg7EjgbsDf9ygrgC+AxP/ivH56DXIfOzWPXr79zDF6nDMA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

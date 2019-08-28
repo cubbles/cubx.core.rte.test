@@ -65,7 +65,7 @@
     "@babel/preset-env": "^7.5.5",
     "@cubbles/webpackage-document-api": "^0.2.3",
     "@cubbles/webpackage-uploader": "^0.1.11",
-    "@cubbles/wpkg-utils": "^0.2.2",
+    "@cubbles/wpkg-utils": "^0.2.3",
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-rewire": "^1.2.0",

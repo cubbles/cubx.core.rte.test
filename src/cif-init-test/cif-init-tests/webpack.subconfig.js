@@ -76,6 +76,4 @@ appFolders.forEach((appFolder) => {
   }));
 });
 
-console.log(config.plugins);
-
 module.exports = config;
