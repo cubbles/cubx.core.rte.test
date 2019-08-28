@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>unit tests for example-compound</title>
+    <script>
+        window.cubx = {
+            "CRCInit": {
+                "rootDependencies": [
+                    {
+                        "artifactId": "<%= elementName %>"
+                    }
+                ]
+            }
+        }
+    </script>
+    <script src="../../../web-component-tester-4.2.2@0.1.0/web-component-tester/browser.js"></script>
+    <script src="mocha-config.js"></script>
+
+    <script src="../../../cubx-rte@4.0.0-SNAPSHOT/cubx-rte-core/main.bundle.js"></script>
+
+</head>
+<body>
+<hr>
+<!-- The cubixx client-runtime-container is bound to the next div -->
+<div cubx-core-crc>
+    <<%= elementName %> cubx-webpackage-id="this"></<%= elementName %>>
+</div>
+
+<script src="connection-hook-compound-test.js"></script>
+</body>
+</html>

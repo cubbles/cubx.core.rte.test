@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>app</title>
+
+    <!--
+        Declare a CRCInit-Object used to initialize the CRC (Client-Runtime-Container):
+        * rootDependencies //a string array; string pattern: webpackageId/artifactId/endpointId
+        ** to refer to artifacts of this webpackage, use 'this' as webpackageId
+    -->
+    <script>
+        window.cubx = {
+            CRCInit: {
+                rootDependencies: [
+                    {
+                        artifactId: '<%= elementName %>'
+                    }
+                ]
+            }
+        }
+    </script>
+
+    <script src="../../../cubx-rte@4.0.0-SNAPSHOT/cubx-rte-core/main.bundle.js"></script>
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+<h1>Example for hookFunctions</h1>
+<!--
+    The cubbles client-runtime-container is bound to the next element.
+    Place Cubbles-Component there as child element.
+    Note: Currently there is only one element supported. This will change in future (@see PLAT-205).
+-->
+<div cubx-core-crc>
+     <<%= elementName %> cubx-webpackage-id="this"></<%= elementName %>>
+</div>
+<h2>Expected in input field</h2>
+<div class="row">
+    <div class="col-md-3 output">
+
+        <span class="message_output">&nbsp;</span>
+    </div>
+    <div class="col-md-3 output">
+        <span class="message_output"></span> (1) (4)
+    </div>
+    <div class="col-md-3 output">
+        <span class="message_output"></span> (1) (4) (5) (2) (4)
+    </div>
+    <div class="col-md-3 output">
+        <span class="message_output"></span> (1) (4) (5) (2) (4) (5) (3)
+    </div>
+</div>
+<h2>Structure</h2>
+<img alt="<%= elementName %>" src="connection-hook-compound.svg">
+<h3>connections</h3>
+<ul>
+    <li>1: <ul>
+        <li><b>connectionId:</b> first</li>
+        <li>hookFunction: function(value,next){ var newValue = value + ' (1)'; next(newValue);}</li>
+    </ul></li>
+    <li>2: <ul>
+        <li><b>connectionId:</b> second</li>
+        <li><b>hookFunction:</b> function(value,next){ var newValue = value + ' (2)'; next(newValue);}</li>
+    </ul></li>
+    <li>3: <ul>
+        <li><b>connectionId:</b> third</li>
+        <li><b>hookFunction:</b> function(value,next){ var newValue = value + ' (3)'; next(newValue);}</li>
+    </ul></li>
+    <li>4: <ul>
+        <li>connectionId: internal-ingoing</li>
+        <li><b>hookFunction:</b> function(value,next){ var newValue = value + ' (4)'; next(newValue);}</li>
+    </ul></li>
+    <li>5: <ul>
+        <li><b>connectionId:</b> internal-outgoing</li>
+        <li><b>hookFunction:</b> function(value,next){ var newValue = value + ' (5)'; next(newValue);}</li>
+    </ul></li>
+</ul>
+</body>
+</html>
