@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>app</title>
+
+    <!--
+        Declare a CRCInit-Object used to initialize the CRC (Client-Runtime-Container):
+        * rootDependencies //a string array; string pattern: webpackageId/artifactId/endpointId
+        ** to refer to artifacts of this webpackage, use 'this' as webpackageId
+    -->
+    <script>
+        window.cubx = {
+            CRCInit: {
+                rootDependencies: [
+                    {
+ 						artifactId: '<%= elementName %>'
+					}
+                ]
+            }
+        }
+    </script>
+
+    <script src="../../cubx-rte@4.0.0-SNAPSHOT/cubx-rte-core/main.bundle.js"></script>
+</head>
+<body>
+<h1>Demo page for elementary component <code><%= elementName %></code></h1>
+
+<div cubx-core-crc>
+    <<%= elementName %>></<%= elementName %>>
+</div>
+
+</body>
+</html>
